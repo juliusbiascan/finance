@@ -15,6 +15,7 @@ app.onError((err, c) => {
     return err.getResponse();
   }
 
+  console.error(err);
   return c.json({ message: "Internal Server Error" }, 500);
 });
 
