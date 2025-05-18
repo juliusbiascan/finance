@@ -44,10 +44,10 @@ const AccountFilter = () => {
       onValueChange={onChange}
       disabled={isLoadingAccounts || isLoadingSummary}
     >
-      <SelectTrigger className="lg:w-auto w-full h-9 rounded-md px-3 font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus:ring-offset-0 focus:ring-transparent outline-none text-white focus:bg-white/30 transition">
+      <SelectTrigger className="lg:w-56 w-full h-10 rounded-lg px-3 font-normal bg-white/80 hover:bg-white border border-gray-200 focus:ring-offset-0 focus:ring-transparent outline-none text-gray-900 focus:bg-white transition shadow-sm">
         <SelectValue placeholder="Filter by account" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="rounded-lg shadow-lg bg-white">
         <SelectItem value="all">All accounts</SelectItem>
         {accounts?.map((account) => (
           <SelectItem key={account.id} value={account.id}>

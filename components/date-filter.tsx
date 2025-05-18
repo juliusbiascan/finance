@@ -34,7 +34,7 @@ const DateFilter = () => {
   };
 
   const [date, setDate] = useState<DateRange | undefined>(paramState);
-  const {} = useGetSummary();
+  const { } = useGetSummary();
   const pushToUrl = (rangeDate?: DateRange | undefined) => {
     const query = {
       from: format(rangeDate?.from || defaultFrom, "yyyy-MM-dd"),
@@ -67,13 +67,13 @@ const DateFilter = () => {
           disabled={false}
           size="sm"
           variant="outline"
-          className="lg:w-auto w-full h-9 rounded-md px-3 font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus:ring-offset-0 focus:ring-transparent outline-none text-white focus:bg-white/30 transition"
+          className="lg:w-56 w-full h-10 rounded-lg px-3 font-normal bg-white/80 hover:bg-white border border-gray-200 focus:ring-offset-0 focus:ring-transparent outline-none text-gray-900 focus:bg-white transition shadow-sm flex items-center justify-between"
         >
           <span>{formatDateRange(paramState)}</span>
           <ChevronDown className="ml-2 size-4 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="lg:w-auto w-full p-0" align="start">
+      <PopoverContent className="lg:w-auto w-full p-0 rounded-lg shadow-lg bg-white border border-gray-100" align="start">
         <Calendar
           disabled={false}
           initialFocus
@@ -88,7 +88,7 @@ const DateFilter = () => {
             <Button
               disabled={!date?.from || !date?.to}
               onClick={onReset}
-              className="w-full"
+              className="w-full rounded-md"
               variant="outline"
             >
               Reset
@@ -98,7 +98,7 @@ const DateFilter = () => {
             <Button
               disabled={!date?.from || !date?.to}
               onClick={() => pushToUrl(date)}
-              className="w-full"
+              className="w-full rounded-md"
             >
               Apply
             </Button>

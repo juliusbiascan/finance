@@ -3,10 +3,18 @@ import Image from "next/image";
 
 const HeaderLogo = () => {
   return (
-    <Link href="/">
+    <Link href="/" className="flex items-center gap-x-2 group">
       <div className="items-center hidden lg:flex">
-        <Image src={"/logo.svg"} alt="logo" width={28} height={28} />
-        <p className="font-semibold text-white text-2xl ml-2.5">Paywall</p>
+        <Image
+          src={"/logo.svg"}
+          alt="logo"
+          width={36}
+          height={36}
+          className="transition-transform group-hover:scale-110"
+        />
+        <p className="font-bold text-white text-3xl ml-3 tracking-tight drop-shadow">
+          Paywall
+        </p>
       </div>
     </Link>
   );
